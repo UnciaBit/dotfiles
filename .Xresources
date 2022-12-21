@@ -1,0 +1,106 @@
+Xft.dpi: 120
+//URxvt.font: xft::size=10
+Xft.autohint:0
+Xft.lcdfilter:lcddfault
+Xft.hintstyle: hintfull
+Xft.hinting:1
+Xft.antialias:1
+Xtf.rgba:rgb
+//URxvt.font:  xft:TerminessTTFNerdFontMono:pixelsize=14
+//xft:Terminus:pixelsize=18,style=Regular
+
+
+!URxvt.letterSpace: 1
+!URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=18,xft: Symbola
+!URxvt.font: xft:FireCode NF:pixelsize=18
+!URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False,xft:Symbola,xft:Noto Emoji:minspace=False, xft:PowerlineSymbols
+!URxvt*boldFont: xft:JetBrains Mono:pixelsize=18:minspace=False,xft:Symbola,xft:Noto Emoji:minspace=False
+URxvt*font: xft:Inconsolata Nerd Font Mono:size=13, xft:DejaVu Sans:size=13
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+!*.foreground:   nord4
+!*.background:   nord0
+!*.cursorColor:  nord4
+!*fading: 35
+!*fadeColor: nord3
+
+!*.color0: nord1
+!*.color1: nord11
+!*.color2: nord14
+!*.color3: nord13
+!*.color4: nord9
+!*.color5: nord15
+!*.color6: nord8
+!*.color7: nord5
+!*.color8: nord3
+!*.color9: nord11
+!*.color10: nord14
+!*.color11: nord13
+!*.color12: nord9
+!*.color13: nord15
+!*.color14: nord7
+!*.color15: nord6
+
+
+! special
+*.foreground:   #a7a7a7
+*.background:   #1e1e1e
+*.cursorColor:  #a7a7a7
+
+! black
+*.color0:       #1e1e1e
+*.color8:       #5f5a60
+
+! red
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
+
+! green
+*.color2:       #8f9d6a
+*.color10:      #8f9d6a
+
+! yellow
+*.color3:       #f9ee98
+*.color11:      #f9ee98
+
+! blue
+*.color4:       #7587a6
+*.color12:      #7587a6
+
+! magenta
+*.color5:       #9b859d
+*.color13:      #9b859d
+
+! cyan
+*.color6:       #afc4db
+*.color14:      #afc4db
+
+! white
+*.color7:       #a7a7a7
+*.color15:      #ffffff
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.scrollBar: false
+URxvt.internalBorder:  6
+
+URxvt.perl-ext-common:tabbed
