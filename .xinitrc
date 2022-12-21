@@ -15,8 +15,9 @@
 # Xsession and xinitrc scripts which has been factored out to avoid duplication
 . /etc/X11/xinit/xinitrc-common
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --auto
+xsetroot -cursor_name left_ptr
 exec bspwm
 
 # The user may have their own clients they want to run.  If they don't,

@@ -8,6 +8,7 @@ Xtf.rgba:rgb
 //URxvt.font:  xft:TerminessTTFNerdFontMono:pixelsize=14
 //xft:Terminus:pixelsize=18,style=Regular
 
+
 !URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=18,xft: Symbola
 !URxvt.font: xft:FireCode NF:pixelsize=18
 !URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False,xft:Symbola,xft:Noto Emoji:minspace=False, xft:PowerlineSymbols
