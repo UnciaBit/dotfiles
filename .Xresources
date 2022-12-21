@@ -1,5 +1,4 @@
 Xft.dpi: 120
-//URxvt.font: xft::size=10
 Xft.autohint:0
 Xft.lcdfilter:lcddfault
 Xft.hintstyle: hintfull
@@ -9,8 +8,6 @@ Xtf.rgba:rgb
 //URxvt.font:  xft:TerminessTTFNerdFontMono:pixelsize=14
 //xft:Terminus:pixelsize=18,style=Regular
 
-
-!URxvt.letterSpace: 1
 !URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=18,xft: Symbola
 !URxvt.font: xft:FireCode NF:pixelsize=18
 !URxvt.font: xft:JetBrains Mono:pixelsize=18:minspace=False,xft:Symbola,xft:Noto Emoji:minspace=False, xft:PowerlineSymbols
