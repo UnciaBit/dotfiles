@@ -1,0 +1,1 @@
+export XDG_DATA_DIRS="/usr/condabin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/wren/.local/share/JetBrains/Toolbox/scripts:/var/lib/snapd/snap/bin:$XDG_DATA_DIRS"

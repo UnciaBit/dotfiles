@@ -7,7 +7,7 @@
 !.profile
 !.xinitrc
 !.Xresources
-
+!.xsessionrc
 !/.config/sxhkd/**
 !/.config/bspwm/**
 
