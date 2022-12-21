@@ -8,5 +8,5 @@
 !.xinitrc
 !.Xresources
 !.config/sxhkd/*
-!.config/bspwm/*
+!*.config/bspwm/*
 
