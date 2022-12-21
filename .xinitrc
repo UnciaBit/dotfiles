@@ -18,8 +18,8 @@
 #xrandr --setprovideroutputsource modesetting NVIDIA-0
 #xrandr --auto
 xsetroot -cursor_name left_ptr
-exec bspwm
 
+exec bspwm 
 
 # The user may have their own clients they want to run.  If they don't,
 # fall back to system defaults.
