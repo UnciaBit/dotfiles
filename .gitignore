@@ -2,4 +2,11 @@
 *
 
 !.gitignore
+!~/.bashrc
+!~/.zshrc
+!~/.profile
+!~/.xinitrc
+!~/.Xresources
+!~/.config/sxhkd
+!/.config/bspwm
 
