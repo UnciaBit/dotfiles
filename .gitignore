@@ -21,7 +21,8 @@
 !.config/autorandr/*
 
 !.config/polybar
-!.config/polybar/*
+!.config/polybar/**
+
 
 !.config/dunst
 !.config/dunst/*
