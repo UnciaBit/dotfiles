@@ -322,7 +322,7 @@
     #foreground = "#ffffff"
     frame_color = "#5B8234"
     foreground = "#5B8234"
-    background = "#191311"
+    background = "#282A2E"
     
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
