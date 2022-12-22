@@ -18,7 +18,7 @@
 !.config/bspwm/*
 
 !.config/autorandr
-!.config/autorandr/*
+!.config/autorandr/**
 
 !.config/polybar
 !.config/polybar/*

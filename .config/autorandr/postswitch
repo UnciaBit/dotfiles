@@ -1,2 +1,2 @@
+sh ./.config/bspwm/bspwmrc
 feh --bg-fill ~/Pictures/Wallpapers/1.jpg
-~/.config/bspwm/bspwmrc
