@@ -8,6 +8,14 @@
 !.xinitrc
 !.Xresources
 !.xsessionrc
-!/.config/sxhkd/**
-!/.config/bspwm/**
 
+!.config
+
+!.config/sxhkd
+!.config/sxhkd/*
+
+!.config/bspwm    
+!.config/bspwm/*
+
+!.config/autorandr
+!.config/autorandr/*
