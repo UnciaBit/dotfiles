@@ -12,8 +12,11 @@
   for m in $outputs; do
     export MONITOR=$m
 
-    if [[ $m == $tray_output ]]; then
+    if [[ $m == $tray_output ]]
+    then
       TRAY_POSITION=right
+    else
+      TRAY_POSITION=""
     fi
 
     polybar --reload default </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
