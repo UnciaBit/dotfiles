@@ -27,5 +27,5 @@
 !.config/dunst/*
 
 !.config/rofi
-!.config/rofi/*
+!.config/rofi/config.rasi
 !.config/rofi/**/**
