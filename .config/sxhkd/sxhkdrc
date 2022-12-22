@@ -7,8 +7,11 @@ super + Return
 	urxvt
 
 # program launcher
+#super + @space
+#	rofi -modi drun,run -show drun
+
 super + @space
-	rofi -modi drun,run -show drun
+        ./home/wren/.config/rofi/launchers/type-1/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
