@@ -321,7 +321,7 @@
     #background = "#285577"
     #foreground = "#ffffff"
     frame_color = "#5B8234"
-    foreground = "#5B8234"
+    foreground = "#F0C674"
     background = "#282A2E"
     
     timeout = 10
