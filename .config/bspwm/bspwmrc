@@ -9,7 +9,7 @@ PRIMARY_MONITOR=$(xrandr | awk '/ primary / {print $1}')
 
 ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
-#bspc monitor $PRIMARY_MONITOR -d 1 2 3
+# bspc monitor $PRIMARY_MONITOR -d 1 2 3
 
 # Mobile
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
@@ -23,32 +23,32 @@ elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS != *"DP-1-0"* ]]
 then
   bspc monitor HDMI-1-0 -d 1 2 3 4
   bspc monitor eDP-1 -d 5 6 7 8 9
-elif[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
+elif [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
 then
   bspc monitor DP-1-0 -d 1 2 3 4
   bspc monitor eDP-1 -d	5 6 7 8 9
 fi
 
 # Full
-if [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]]
-then
-  bspc monitor HDMI-1-0 -d 1 2 3 4
-  bspc monitor DP-1-0 -d 5 6 7 8 9
-fi
+#if [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]]
+#then
+  #bspc monitor HDMI-1-0 -d 1 2 3 4
+  #bspc monitor DP-1-0 -d 5 6 7 8 9
+#fi
 
 # Center Only
-if [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS != *"DP-1-0"* ]]
-then
-  bspc monitor HDMI-1-0 -d 1 2 3 4
-  bspc monitor eDP-1 -d 5 6 7 8 9
-fi
+#if [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS != *"DP-1-0"* ]]
+#then
+  #bspc monitor HDMI-1-0 -d 1 2 3 4
+  #bspc monitor eDP-1 -d 5 6 7 8 9
+#fi
 
 # Left Only
-if [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
-then
-  bspc monitor DP-1-0 -d 1 2 3 4
-  bspc monitor eDP-1 -d	5 6 7 8 9
-fi
+#if [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
+#then
+  #bspc monitor DP-1-0 -d 1 2 3 4
+  #bspc monitor eDP-1 -d	5 6 7 8 9
+#fi
 
 bspc config border_width         4
 bspc config window_gap           0
