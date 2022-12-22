@@ -11,7 +11,7 @@ super + Return
 #	rofi -modi drun,run -show drun
 
 super + @space
-        ./home/wren/.config/rofi/launchers/type-1/launcher.sh
+        bash /home/wren/.config/rofi/launchers/type-1/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
