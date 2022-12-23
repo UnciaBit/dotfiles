@@ -3,6 +3,8 @@
 sxhkd &
 autorandr --change
 ~/.config/polybar/launch.sh
+xfce4-power-manager &
+
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
 
