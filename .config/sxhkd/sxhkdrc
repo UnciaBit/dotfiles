@@ -89,7 +89,7 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
         INDEX=0;ITER=1;for i in $(bspc query -D --names); do if [[ $i == '^{1-9,10}' ]]; then INDEX=ITER; fi; ((ITER++)); done; \
-	bspc {desktop -f,node -d} $INDEX
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
