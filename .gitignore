@@ -8,6 +8,7 @@
 !.xinitrc
 !.Xresources
 !.xsessionrc
+!.bash_profile
 
 !.config
 
@@ -29,3 +30,4 @@
 !.config/rofi
 !.config/rofi/*
 !.config/rofi/**/**
+
