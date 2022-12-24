@@ -98,9 +98,10 @@ super + minus
         bspc node $id --flag hidden;bspc node -f $id
 
 super +	shift + minus
-        #hidden=$(bspc query -N -n .hidden -d focused | tail -n1); \
-        notify-send $hidden; \
-        bspc node "$hidden" -g hidden=off
+        notify-send "Trigged"
+        #_hidden=$(bspc query -N -n .hidden -d focused | tail -n1); \
+        #notify-send $hidden; \
+        #bspc node "$hidden" -g hidden=off
 
 
 #
