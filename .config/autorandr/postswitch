@@ -1,2 +1,2 @@
 sh ./.config/bspwm/bspwmrc
-feh --bg-fill ~/Pictures/Wallpapers/1.jpg
+feh --bg-fill /home/wren/mnt/Data/admin/wallpapers/2023Q1
