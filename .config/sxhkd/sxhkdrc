@@ -99,8 +99,7 @@ super + minus
 
 super + shift + minus
         hidden=$(bspc query -N -n .hidden -d focused | tail -n1); \
-        notify-send "asd" $hidden; \
-        #bspc node "$hidden" -g hidden=off
+        bspc node "$hidden" -g hidden=off
 
 
 #
