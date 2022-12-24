@@ -48,4 +48,4 @@ bspc rule -a Screenkey manage=off
 # check scratchpad already running
 #[ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && st -c scratchpad -e ~/bin/scratch &
 
-feh --bg-fill /home/wren/mnt/Data/admin/wallpapers/2023Q1/owl.jpg
+feh --bg-fill /home/wren/mnt/Data/personal/_admin/wallpapers/2023Q1/owl.jpg
