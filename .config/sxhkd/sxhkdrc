@@ -97,6 +97,11 @@ super + minus
         id=$(cat /tmp/scratchid);\
         bspc node $id --flag hidden;bspc node -f $id
 
+super +	shift + minus
+        id=$(cat /tmp/scratchid);\
+        bspc node $id --flag sticky;bspc node -f $id
+
+
 #
 # preselect
 #
