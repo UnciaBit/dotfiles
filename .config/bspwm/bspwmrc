@@ -48,4 +48,4 @@ bspc rule -a scratchpad sticky=on state=floating hidden=on
 # check scratchpad already running
 [ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && st -c scratchpad -e ~/bin/scratch &
 
-feh --bg-fill ~/Pictures/Wallpapers/1.jpg
+feh --bg-fill /home/wren/mnt/Data/admin/wallpapers/2023Q1
