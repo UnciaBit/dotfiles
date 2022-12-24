@@ -24,6 +24,9 @@ super + b
 super + ctrl + b
         firefox -private-window
 
+super + f
+        nautilus
+
 
 #
 # bspwm hotkeys
