@@ -6,7 +6,7 @@ autorandr --change
 xfce4-power-manager &
 # Required for VMWare Workstation
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-
+ibus-daemon -drxR
 
 PRIMARY_MONITOR=$(xrandr | awk '/ primary / {print $1}')
 ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
