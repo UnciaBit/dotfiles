@@ -8,6 +8,7 @@ xfce4-power-manager &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 ibus-daemon -drxR
 
+export XDG_CURRENT_DESKTOP="bspwm"
 PRIMARY_MONITOR=$(xrandr | awk '/ primary / {print $1}')
 ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
