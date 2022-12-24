@@ -98,8 +98,8 @@ super + minus
         bspc node $id --flag hidden;bspc node -f $id
 
 super +	shift + minus
-        id=$(cat /tmp/scratchid);\
-        bspc node -f $id
+        hidden=$(bspc query -N -n .hidden -d focused) \
+        bspc node "$hidden" -g hidden=off
 
 
 #
