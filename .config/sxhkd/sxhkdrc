@@ -98,7 +98,7 @@ super + minus
         bspc node $id --flag hidden;bspc node -f $id
 
 super +	shift + minus
-        hidden=$(bspc query -N -n .hidden -d focused) \
+        hidden=$(bspc query -N -n .hidden -d focused | head -1) \
         bspc node "$hidden" -g hidden=off
 
 
