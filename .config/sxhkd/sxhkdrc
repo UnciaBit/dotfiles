@@ -97,7 +97,7 @@ super + minus
         id=$(cat /tmp/scratchid);\
         bspc node $id --flag hidden;bspc node -f $id
 
-super +	shift + minus
+super + plus
         notify-send "Trigged"
         #_hidden=$(bspc query -N -n .hidden -d focused | tail -n1); \
         #notify-send $hidden; \
