@@ -88,7 +88,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	notify-send '{1-9,10}'; \
+	notify-send {1-9,10}; \
         bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
