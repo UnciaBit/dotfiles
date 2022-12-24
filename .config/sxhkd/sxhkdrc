@@ -63,7 +63,7 @@ super + g
 super + {t,shift + t,s}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
-super + f
+super + shift + f
         bspc node -t fullscreen
 
 # set the node flags
