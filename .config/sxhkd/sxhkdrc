@@ -94,7 +94,6 @@ super + {_,shift + }{1-9,0}
 
 # Scratchpad
 super + minus
-        notify-send "s" "a"; \
         id=$(cat /tmp/scratchid);\
         bspc node $id --flag hidden;bspc node -f $id
 
