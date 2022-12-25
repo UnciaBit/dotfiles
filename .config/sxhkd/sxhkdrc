@@ -40,7 +40,7 @@ XF86AudioMute
 XF86AudioMicMute
         pactl set-source-mute @DEFAULT_SOURCE@ toggle; \
         CURRENT_SOURCE=$(pactl info | grep "Default Source" | cut -f3 -d" "); \
-        RESULT=$(pactl list sources | grep -A 10 $CURRENT_SOURCE | grep 'Mute: yes')
+        RESULT=$(pactl list sources | grep -A 10 $CURRENT_SOURCE | grep 'Mute: yes'); \
         notify-send "asd" $RESULT; \
         if [[ result -ne 0 ]]; then
             notify-send "asd" $RESULT
