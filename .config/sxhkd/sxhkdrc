@@ -43,9 +43,9 @@ XF86AudioMicMute
         if [[ $(pactl list sources | grep -A 10 $CURRENT_SOURCE | grep "Mute: yes") ]]; then
              echo 1 | sudo tee /sys/class/leds/platform\:\:micmute/brightness
              notify-send "asd" "asd"
-       	else
-       	     echo 0 | sudo tee /sys/class/leds/platform\:\:micmute/brightness 
-       	fi
+        else
+	     echo 0 | sudo tee /sys/class/leds/platform\:\:micmute/brightness 
+        fi
 
 # 
 # bspwm hotkeys
