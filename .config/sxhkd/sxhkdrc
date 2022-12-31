@@ -41,6 +41,12 @@ XF86AudioMicMute
         pactl set-source-mute @DEFAULT_SOURCE@ toggle; \
         ~/.config/sxhkd/micmutetoggle
 
+
+Print
+        flameshot full
+
+Shift + Print
+        flameshot gui
 # 
 # bspwm hotkeys
 #
