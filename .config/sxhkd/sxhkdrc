@@ -45,7 +45,7 @@ XF86AudioMicMute
 Print
         flameshot full
 
-Shift + Print
+shift + Print
         flameshot gui
 # 
 # bspwm hotkeys
