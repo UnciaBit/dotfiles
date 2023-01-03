@@ -27,8 +27,8 @@ super + ctrl + b
 super + f
         nautilus
 
-super + Shift + p
-        sh ~/.config/polybar/launch.sh
+super + shift + p
+        sh ~/.config/polybarP/launch.sh
 
 XF86AudioLowerVolume
         pactl set-sink-volume @DEFAULT_SINK@ -5%
