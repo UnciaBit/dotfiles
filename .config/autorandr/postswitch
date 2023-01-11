@@ -1,2 +1,3 @@
+sleep 1
 sh ./.config/bspwm/bspwmrc
 feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.jpg
