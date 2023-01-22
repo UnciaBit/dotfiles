@@ -13,9 +13,9 @@ PRIMARY_MONITOR=$(xrandr | awk '/ primary / {print $1}')
 ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
 # Mobile
-bspc monitor eDP-1 -r
-bspc monitor HDMI-1-0 -r
-bspc monitor DP-1-0 -r
+#bspc monitor eDP-1 -r
+#bspc monitor HDMI-1-0 -r
+#bspc monitor DP-1-0 -r
 
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
