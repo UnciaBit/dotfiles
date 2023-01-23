@@ -114,4 +114,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Alias
 
-alias mpv-nvidia="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia mpv --force-window --idle --gpu-api=opengl"
+alias mpv-nvidia="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia mpv --force-window --idle --gpu-api=opengl &&"
