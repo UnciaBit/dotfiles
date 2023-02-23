@@ -15,22 +15,20 @@ off
 output DP-1-3
 off
 output DP-1-0
-crtc 5
 mode 3840x2160
 pos 0x0
 rate 60.00
+rotate left
 x-prop-non_desktop 0
 output HDMI-1-0
-crtc 0
 mode 3840x2160
-pos 3840x0
+pos 2160x954
 primary
 rate 60.00
 x-prop-non_desktop 0
 output eDP-1
-crtc 1
 mode 2560x1600
-pos 7680x560
+pos 6000x1514
 rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
