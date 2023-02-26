@@ -47,6 +47,7 @@ then
 
   for i in `seq 6 9`
   do
+    echo "Move Desktop $i to monitor eDP-1"
     bspc desktop $i --to-monitor eDP-1
   done
   # bspc monitor HDMI-1-0 -d 1 2 3 4 5
