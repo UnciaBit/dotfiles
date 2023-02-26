@@ -42,6 +42,7 @@ then
   notify-send "Monitor" "Centre Only Mode"
   for i in `seq 1 5`
   do
+    echo "Move Desktop $i to monitor HDMI-1-0"
     bspc desktop $i --to-monitor HDMI-1-0
   done
 
