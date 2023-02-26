@@ -16,11 +16,10 @@ ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 #bspc monitor eDP-1 -r
 #bspc monitor HDMI-1-0 -r
 #bspc monitor DP-1-0 -r
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+# bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
-  
- #  bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+  bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
   # Move Monitors
   bspc monitor HDMI-1-0 -a Desktop > /dev/null
   for desktop in $(seq 1 9)
