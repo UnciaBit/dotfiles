@@ -2,7 +2,7 @@
 # sleep 1
 # notify-send "Test" "Test"
 # sleep 1
-sh /home/wren/.config/bspwm/bspwmrc
+/home/wren/.config/bspwm/bspwmrc &!
 # nohup sh ~/.config/polybar/launch.sh &
 # feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.jpg
 # notify-send "Closing" "Closing"

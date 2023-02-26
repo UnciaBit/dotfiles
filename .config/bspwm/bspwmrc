@@ -87,4 +87,4 @@ bspc rule -a Screenkey manage=off
 
 # feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.jpg
 feh --bg-max /home/wren/Documents/Wallpapers/104510108_p0.jpg
-sh ~/.config/polybar/launch.sh
+# sh ~/.config/polybar/launch.sh
