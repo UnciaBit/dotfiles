@@ -2,7 +2,7 @@
 
 sxhkd &
 autorandr --change
-~/.config/polybar/launch.sh
+# ~/.config/polybar/launch.sh
 xfce4-power-manager &
 # Required for VMWare Workstation
 /usr/libexec/polkit-gnome-authentication-agent-1 &
