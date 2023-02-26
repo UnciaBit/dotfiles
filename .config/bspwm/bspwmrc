@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+notify-send "bspwm" "Reloading bspwmrc"
+
 sxhkd &
 autorandr --change
 # ~/.config/polybar/launch.sh
