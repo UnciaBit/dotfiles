@@ -23,6 +23,7 @@ then
   # Move Monitors
   for desktop in $(bspc query -D -m HDMI-1-0)
   do
+         echo "Moving desktop $desktop to moitor eDP-1"
 	 bspc desktop $desktop --to-monitor eDP-1
   done
   # bspc monitor --remove HDMI-1-0 > /dev/null
