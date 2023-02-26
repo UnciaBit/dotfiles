@@ -53,7 +53,7 @@ then
   # bspc monitor eDP-1 -d 6 7 8 9
   # bspc wm -r 
   bspc monitor HDMI-1-0 -o 1 2 3 4 5
-  bspc monitor HDMI-1-0 -d 1 2 3 4 5
+  
   bspc monitor eDP-1 -d -o 6 7 8 9
 elif [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
 then
