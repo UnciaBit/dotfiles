@@ -3,8 +3,6 @@
 # notify-send "Test" "Test"
 # sleep 1
 zsh /home/wren/.config/bspwm/bspwmrc &!
-sleep 1
-zsh ~/.config/polybar/launch.sh &!
 # feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.j
 notify-send "Closing" "Closing"
 
