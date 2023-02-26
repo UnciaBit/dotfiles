@@ -1,0 +1,7 @@
+#!/bin/bash 
+# sleep 1
+# notify-send "Test" "Test"
+sleep 1
+sh /home/wren/.config/bspwm/bspwmrc
+sh ~/.config/polybar/launch.sh
+# feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.jpg
