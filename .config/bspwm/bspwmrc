@@ -104,12 +104,22 @@ then
        	bspc desktop $desktop --to-monitor DP-1-0
     fi
 
-    bspc desktop $i --to-monitor DP-1-0
+    # bspc desktop $i --to-monitor DP-1-0
   done
 
   for i in `seq 8 10`
   do
     echo "Move Desktop $i to monitor eDP-1"
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor eDP-1 -a $desktop
+    else
+       	bspc desktop $desktop --to-monitor eDP-1
+    fi
+
     bspc desktop $i --to-monitor eDP-1
   done
 
