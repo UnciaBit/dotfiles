@@ -187,8 +187,8 @@ then
     # bspc desktop $i --to-monitor eDP-1
   done
 
-  bspc monitor HDMI-1-0 -o 1 2 3 4 5
-  bspc monitor eDP-1 -o 6 7 8 9 10
+  # bspc monitor HDMI-1-0 -o 1 2 3 4 5
+  # bspc monitor eDP-1 -o 6 7 8 9 10
 
   # Remove redundant desktop
 
@@ -201,6 +201,9 @@ then
   done
 
   bspc monitor --remove DP-1-0 > /dev/null
+
+  bspc monitor HDMI-1-0 -o 1 2 3 4 5
+  bspc monitor eDP-1 -o 6 7 8 9 10
 
 elif [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
 then
