@@ -34,20 +34,17 @@ ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
-  
   # Create temporary desktop for moving desktops
   bspc monitor HDMI-1-0 -a Desktop > /dev/null
-  
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
      echo "Moving desktop $desktop to moitor eDP-1"
-     
      find_desktop $desktop
      result=$?
      if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
      then
-		 bspc monitor eDP-1 -a $desktop
+	 bspc monitor eDP-1 -a $desktop
      else
      	 bspc desktop $desktop --to-monitor eDP-1
 	 fi
