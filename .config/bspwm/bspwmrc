@@ -80,6 +80,8 @@ then
 elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]] && [[ $ALL_MONITORS == *"eDP-1"* ]] #All
 then
 
+  bspc monitor DP-1-0 -a Desktop > /dev/null
+
   for desktop in `seq 1 4`
   do
     echo "Move Desktop $i to monitor HDMI-1-0"
