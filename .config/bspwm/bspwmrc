@@ -80,6 +80,17 @@ then
 elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]] && [[ $ALL_MONITORS == *"eDP-1"* ]] #All
 then
 
+  for i in $(bspc query -M --names)
+  do
+    if [[ $i == "DP-1-0" ]]
+    then
+      bspc monitor DP-1-0 -a Desktop > /dev/null
+    elif [[ $i == "HDMI-1-0" ]]
+    then
+      bspc monitor HDMI-1-0 -a Desktop > /dev/null
+    fi
+  done
+
   for desktop in `seq 1 4`
   do
     echo "Move Desktop $desktop to monitor HDMI-1-0"
@@ -140,6 +151,9 @@ then
   bspc monitor HDMI-1-0 -o 1 2 3 4
   bspc monitor DP-1-0 -o 5 6 7
   bspc monitor eDP-1 -o 8 9 10
+
+  bspc monitor --remove DP-1-0 > /dev/null
+
   notify-send "Monitor" "Full Mode"
 elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS != *"DP-1-0"* ]]
 then
