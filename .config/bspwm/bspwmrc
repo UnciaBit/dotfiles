@@ -171,6 +171,15 @@ then
     # bspc desktop $i --to-monitor HDMI-1-0
   done
 
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
+
   for desktop in `seq 6 10`
   do
     echo "Move Desktop $i to monitor eDP-1"
