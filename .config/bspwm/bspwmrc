@@ -51,7 +51,7 @@ then
 	 bspc monitor eDP-1 -a $desktop
      else
      	 bspc desktop $desktop --to-monitor eDP-1
-	 fi
+     fi
   done
   # Order desktops
   bspc monitor eDP-1 -o 1 2 3 4 5 6 7 8 9 10
@@ -75,10 +75,20 @@ then
 elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]] && [[ $ALL_MONITORS == *"eDP-1"* ]] #All
 then
 
-  for i in `seq 1 4`
+  for desktop in `seq 1 4`
   do
     echo "Move Desktop $i to monitor HDMI-1-0"
-    bspc desktop $i --to-monitor HDMI-1-0
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor HDMI-1-0 -a $desktop
+    else
+        bspc desktop $desktop --to-monitor HDMI-1-0
+    fi
+
+    # bspc desktop $i --to-monitor HDMI-1-0
   done
 
   for i in `seq 5 7`
