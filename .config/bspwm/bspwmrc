@@ -96,7 +96,7 @@ then
     # bspc desktop $i --to-monitor HDMI-1-0
   done
 
-  for desktop in `seq 5 8`
+  for desktop in `seq 5 7`
   do
     echo "Move Desktop $i to monitor DP-1-0"
     
@@ -112,7 +112,7 @@ then
     # bspc desktop $i --to-monitor DP-1-0
   done
 
-  for i in `seq 8 10`
+  for desktop in `seq 8 10`
   do
     echo "Move Desktop $i to monitor eDP-1"
 
