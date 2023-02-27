@@ -37,6 +37,7 @@ then
     bspc monitor DP-1-0 -a Desktop > /dev/null
   elif [[ $ALL_MONITORS == *"HDMI-1-0"* ]]
   then
+    notify-send "TMP" "TMP"
     bspc monitor HDMI-1-0 -a Desktop > /dev/null
   fi
 
