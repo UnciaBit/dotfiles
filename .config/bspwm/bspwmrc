@@ -32,9 +32,17 @@ if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
   
   # Create temporary desktop for moving desktops
-  bspc monitor DP-1-0 -a Desktop > /dev/null
-  bspc monitor HDMI-1-0 -a Desktop > /dev/null
 
+  for i in $(bspc query -M --names)
+  do
+    if [[ $i == "DP-1-0" ]]
+    then
+      bspc monitor DP-1-0 -a Desktop > /dev/null
+    elif [[ $i == "HDMI-1-0" ]]
+    then
+      bspc monitor HDMI-1-0 -a Desktop > /dev/null
+    fi
+  done
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
