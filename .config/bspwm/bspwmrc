@@ -132,16 +132,36 @@ then
 
   notify-send "Monitor" "Centre Only Mode"
 
-  for i in `seq 1 5`
+  for desktop in `seq 1 5`
   do
     echo "Move Desktop $i to monitor HDMI-1-0"
-    bspc desktop $i --to-monitor HDMI-1-0
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor HDMI-1-0 -a $desktop
+    else
+        bspc desktop $desktop --to-monitor HDMI-1-0
+    fi
+    
+    # bspc desktop $i --to-monitor HDMI-1-0
   done
 
-  for i in `seq 6 10`
+  for desktop in `seq 6 10`
   do
     echo "Move Desktop $i to monitor eDP-1"
-    bspc desktop $i --to-monitor eDP-1
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor eDP-1 -a $desktop
+    else
+       	bspc desktop $desktop --to-monitor eDP-1
+    fi
+
+    # bspc desktop $i --to-monitor eDP-1
   done
 
   bspc monitor HDMI-1-0 -o 1 2 3 4 5
