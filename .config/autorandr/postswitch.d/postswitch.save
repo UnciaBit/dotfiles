@@ -1,8 +1,0 @@
-#!/usr/bin/zsh 
-# sleep 1
-# notify-send "Test" "Test"
-# sleep
-sh /home/wren/.config/bspwm/bspwmrc
-# feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.j
-notify-send "Closing" "Closing"
-

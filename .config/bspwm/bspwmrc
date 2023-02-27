@@ -128,6 +128,15 @@ then
     # bspc desktop $i --to-monitor eDP-1
   done
 
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
   # bspc monitor HDMI-1-0 -d 1 2 3
   # bspc monitor DP-1-0 -d 4 5 6
   # bspc monitor eDP-1 -d 7 8 9
