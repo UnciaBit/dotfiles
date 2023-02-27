@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-sh /home/wren/.config/bspwm/bspwmrc
-
+sh /home/wren/.config/bspwm/bspwmrc &
+sh ~/.config/polybar/launch.sh &
 
