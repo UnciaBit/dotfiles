@@ -30,16 +30,10 @@ ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
-
+  
   # Create temporary desktop for moving desktops
-  if [[ $ALL_MONITORS == *"DP-1-0"* ]]
-  then
-    bspc monitor DP-1-0 -a Desktop > /dev/null
-  elif [[ $ALL_MONITORS == *"HDMI-1-0"* ]]
-  then
-    bspc monitor HDMI-1-0 -a Desktop > /dev/null
-  fi
-
+  bspc monitor DP-1-0 -a Desktop > /dev/null
+  bspc monitor HDMI-1-0 -a Desktop > /dev/null
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
