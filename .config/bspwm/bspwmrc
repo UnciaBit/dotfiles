@@ -34,6 +34,7 @@ then
   # Create temporary desktop for moving desktops
   bspc monitor DP-1-0 -a Desktop > /dev/null
   bspc monitor HDMI-1-0 -a Desktop > /dev/null
+
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
@@ -60,7 +61,7 @@ then
 
   for desktop in  $(bspc query -D --names)
   do
-    if [[ $i == "Desktop" ]]
+    if [[ $desktop == "Desktop" ]]
     then
         bspc desktop Desktop -r
     fi
