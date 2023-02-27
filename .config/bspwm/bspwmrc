@@ -82,7 +82,7 @@ then
 
   for desktop in `seq 1 4`
   do
-    echo "Move Desktop $i to monitor HDMI-1-0"
+    echo "Move Desktop $desktop to monitor HDMI-1-0"
 
     find_desktop $desktop
     result=$?
@@ -98,7 +98,7 @@ then
 
   for desktop in `seq 5 7`
   do
-    echo "Move Desktop $i to monitor DP-1-0"
+    echo "Move Desktop $desktop to monitor DP-1-0"
     
     find_desktop $desktop
     result=$?
@@ -114,7 +114,7 @@ then
 
   for desktop in `seq 8 10`
   do
-    echo "Move Desktop $i to monitor eDP-1"
+    echo "Move Desktop $desktop to monitor eDP-1"
 
     find_desktop $desktop
     result=$?
