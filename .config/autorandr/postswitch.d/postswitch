@@ -3,5 +3,5 @@
 
 sh /home/wren/.config/bspwm/bspwmrc &
 notify-send "POSTSWITCH" "Reloading polybar"
-sh /home/wren/.config/polybar/launch.sh &
+# sh /home/wren/.config/polybar/launch.sh &
 # sh /home/wren/.config/autorandr/postswitch.d/postswitch
