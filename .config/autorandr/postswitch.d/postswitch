@@ -1,5 +1,4 @@
 #!/bin/bash
 
-
 sh /home/wren/.config/bspwm/bspwmrc
 systemctl --user restart polybar
