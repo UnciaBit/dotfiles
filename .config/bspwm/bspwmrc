@@ -63,8 +63,18 @@ then
   # Remove monitor
   bspc monitor --remove HDMI-1-0 > /dev/null
   bspc monitor --remove DP-1-0 > /dev/null
+
   # Remove redundant desktop
   bspc desktop Desktop -r
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $i == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
   notify-send "Monitor" "Mobile Mode"
 elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]] && [[ $ALL_MONITORS == *"eDP-1"* ]] #All
 then
