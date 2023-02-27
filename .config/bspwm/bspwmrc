@@ -120,7 +120,7 @@ then
        	bspc desktop $desktop --to-monitor eDP-1
     fi
 
-    bspc desktop $i --to-monitor eDP-1
+    # bspc desktop $i --to-monitor eDP-1
   done
 
   # bspc monitor HDMI-1-0 -d 1 2 3
