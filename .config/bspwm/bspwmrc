@@ -34,8 +34,16 @@ ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
 
 if [[ $PRIMARY_MONITOR = "eDP-1" ]]
 then
+
   # Create temporary desktop for moving desktops
-  bspc monitor HDMI-1-0 -a Desktop > /dev/null
+  if [[ $ALL_MONITORS == *"DP-1-0"* ]]
+  then
+    bspc monitor DP-1-0 -a Desktop > /dev/null
+  elif [[ $ALL_MONITORS == *"HDMI-1-0"* ]]
+  then
+    bspc monitor HDMI-1-0 -a Desktop > /dev/null
+  fi
+
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
@@ -51,8 +59,10 @@ then
   done
   # Order desktops
   bspc monitor eDP-1 -o 1 2 3 4 5 6 7 8 9 10
+
   # Remove monitor
   bspc monitor --remove HDMI-1-0 > /dev/null
+  bspc monitor --remove DP-1-0 > /dev/null
   # Remove redundant desktop
   bspc desktop Desktop -r
   notify-send "Monitor" "Mobile Mode"
