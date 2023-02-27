@@ -1,8 +1,7 @@
-#!/usr/bin/zsh
+#!/bin/bash
 
 
-sh /home/wren/.config/bspwm/bspwmrc &!
-sleep 1
+sh /home/wren/.config/bspwm/bspwmrc &
 notify-send "POSTSWITCH" "Reloading polybar"
-while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
-polybar --reload default
+sh /home/wren/.config/polybar/launch.sh &
+# sh /home/wren/.config/autorandr/postswitch.d/postswitch
