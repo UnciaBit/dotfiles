@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 
-sh /home/wren/.config/bspwm/bspwmrc &
-sh ~/.config/polybar/launch.sh &
-
+sh /home/wren/.config/bspwm/bspwmrc &!
+sleep 1
+notify-send "POSTSWITCH" "Reloading polybar"
+polybar --reload default
