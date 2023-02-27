@@ -37,13 +37,14 @@ then
   # Create or move desktops
   for desktop in $(seq 1 10)
   do
-     echo "Moving desktop $desktop to moitor eDP-1"
+#      echo "Moving desktop $desktop to moitor eDP-1"
      find_desktop $desktop
      result=$?
      if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
      then
 	 bspc monitor eDP-1 -a $desktop
      else
+         echo "Moving desktop $desktop" 
      	 bspc desktop $desktop --to-monitor eDP-1
      fi
   done
