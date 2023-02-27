@@ -179,7 +179,6 @@ then
     fi
   done
 
-
   for desktop in `seq 6 10`
   do
     echo "Move Desktop $i to monitor eDP-1"
