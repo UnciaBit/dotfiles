@@ -152,10 +152,6 @@ then
     if [[ $i == "DP-1-0" ]]
     then
       bspc monitor DP-1-0 -a Desktop > /dev/null
-    elif [[ $i == "HDMI-1-0" ]]
-    then
-      echo "Temp for HDMI"
-      bspc monitor HDMI-1-0 -a Desktop > /dev/null
     fi
   done
 
