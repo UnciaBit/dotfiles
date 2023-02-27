@@ -3,7 +3,7 @@
 notify-send "bspwm" "Reloading bspwmrc"
 
 sxhkd &
-autorandr --change
+#autorandr --change
 # ~/.config/polybar/launch.sh
 xfce4-power-manager &
 # Required for VMWare Workstation

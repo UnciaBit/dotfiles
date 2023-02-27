@@ -4,4 +4,5 @@
 sh /home/wren/.config/bspwm/bspwmrc &!
 sleep 1
 notify-send "POSTSWITCH" "Reloading polybar"
+while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 polybar --reload default
