@@ -66,7 +66,7 @@ then
   bspc monitor --remove DP-1-0 > /dev/null
 
   # Remove redundant desktop
-  bspc desktop Desktop -r
+  # bspc desktop Desktop -r
 
   for desktop in  $(bspc query -D --names)
   do
