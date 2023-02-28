@@ -6,7 +6,8 @@
 super + Return
 	alacritty
 	# urxvt
-
+super + shift + Return
+	alacritty -e tmux
 # program launcher
 #super + @space
 #	rofi -modi drun,run -show drun
