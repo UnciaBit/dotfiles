@@ -1,0 +1,246 @@
+#!/usr/bin/sh
+
+find_desktop(){
+	for i in $(bspc query -D --names)
+	do 
+		if [[ $i == $1 ]];
+		then 
+			return 1
+		fi
+	done
+	return 0
+}
+
+notify-send "bspwm" "Reloading bspwmrc"
+
+sxhkd &
+#autorandr --change
+# ~/.config/polybar/launch.sh
+xfce4-power-manager &
+# Required for VMWare Workstation
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+ibus-daemon -drxR
+
+export XDG_CURRENT_DESKTOP="bspwm"
+PRIMARY_MONITOR=$(xrandr | awk '/ primary / {print $1}')
+ALL_MONITORS=$(xrandr |awk '/ connected/{print $1}')
+
+
+# --- START Monitor Config --------------------------------------------
+
+if [[ $PRIMARY_MONITOR = "eDP-1" ]]
+then
+  
+  # Create temporary desktop for moving desktops
+
+  for i in $(bspc query -M --names)
+  do
+    if [[ $i == "DP-1-0" ]]
+    then
+      bspc monitor DP-1-0 -a Desktop > /dev/null
+    elif [[ $i == "HDMI-1-0" ]]
+    then
+      echo "Temp for HDMI"
+      bspc monitor HDMI-1-0 -a Desktop > /dev/null
+    fi
+  done
+  # Create or move desktops
+  for desktop in $(seq 1 10)
+  do
+#      echo "Moving desktop $desktop to moitor eDP-1"
+     find_desktop $desktop
+     result=$?
+     if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+     then
+	 bspc monitor eDP-1 -a $dbsesktop
+     else
+         echo "Moving desktop $desktop" 
+     	 bspc desktop $desktop --to-monitor eDP-1
+     fi
+  done
+  # Order desktops
+  bspc monitor eDP-1 -o 1 2 3 4 5 6 7 8 9 10
+
+  # Remove monitor
+  bspc monitor --remove HDMI-1-0 > /dev/null
+  bspc monitor --remove DP-1-0 > /dev/null
+
+  # Remove redundant desktop
+  # bspc desktop Desktop -r
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
+  notify-send "Monitor" "Mobile Mode"
+elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS == *"DP-1-0"* ]] && [[ $ALL_MONITORS == *"eDP-1"* ]] #All
+then
+
+  for desktop in `seq 1 4`
+  do
+    echo "Move Desktop $desktop to monitor HDMI-1-0"
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor HDMI-1-0 -a $desktop
+    else
+        bspc desktop $desktop --to-monitor HDMI-1-0
+    fi
+
+    # bspc desktop $i --to-monitor HDMI-1-0
+  done
+
+  for desktop in `seq 5 7`
+  do
+    echo "Move Desktop $desktop to monitor DP-1-0"
+    
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+       	bspc monitor DP-1-0 -a $desktop
+    else
+       	bspc desktop $desktop --to-monitor DP-1-0
+    fi
+
+    # bspc desktop $i --to-monitor DP-1-0
+  done
+
+  for desktop in `seq 8 10`
+  do
+    echo "Move Desktop $desktop to monitor eDP-1"
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor eDP-1 -a $desktop
+    else
+       	bspc desktop $desktop --to-monitor eDP-1
+    fi
+
+    # bspc desktop $i --to-monitor eDP-1
+  done
+
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
+  bspc monitor HDMI-1-0 -o 1 2 3 4
+  bspc monitor DP-1-0 -o 5 6 7
+  bspc monitor eDP-1 -o 8 9 10
+
+  notify-send "Monitor" "Full Mode"
+elif [[ $PRIMARY_MONITOR = "HDMI-1-0" ]] && [[ $ALL_MONITORS != *"DP-1-0"* ]]
+then
+
+  notify-send "Monitor" "Centre Only Mode"
+
+  for i in $(bspc query -M --names)
+  do
+    if [[ $i == "DP-1-0" ]]
+    then
+      bspc monitor DP-1-0 -a Desktop > /dev/null
+    fi
+  done
+
+  for desktop in `seq 1 5`
+  do
+    echo "Move Desktop $i to monitor HDMI-1-0"
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor HDMI-1-0 -a $desktop
+    else
+        bspc desktop $desktop --to-monitor HDMI-1-0
+    fi
+
+    # bspc desktop $i --to-monitor HDMI-1-0
+  done
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
+  for desktop in `seq 6 10`
+  do
+    echo "Move Desktop $i to monitor eDP-1"
+
+    find_desktop $desktop
+    result=$?
+    if [[ $result -eq 0 ]] # If desktop of name $desktop not already exists
+    then
+        bspc monitor eDP-1 -a $desktop
+    else
+       	bspc desktop $desktop --to-monitor eDP-1
+    fi
+
+    # bspc desktop $i --to-monitor eDP-1
+  done
+
+  # bspc monitor HDMI-1-0 -o 1 2 3 4 5
+  # bspc monitor eDP-1 -o 6 7 8 9 10
+
+  # Remove redundant desktop
+
+  for desktop in  $(bspc query -D --names)
+  do
+    if [[ $desktop == "Desktop" ]]
+    then
+        bspc desktop Desktop -r
+    fi
+  done
+
+  bspc monitor --remove DP-1-0 > /dev/null
+
+  bspc monitor HDMI-1-0 -o 1 2 3 4 5
+  bspc monitor eDP-1 -o 6 7 8 9 10
+
+elif [[ $PRIMARY_MONITOR = "DP-1-0" ]] && [[ $ALL_MONITORS != *"HDMI-1-0"* ]]
+then
+  bspc monitor DP-1-0 -d 1 2 3 4
+  bspc monitor eDP-1 -d	5 6 7 8 9
+  notify-send "Monitor" "Left Only Mode"
+fi
+
+# --- END Monitor Config --------------------------------------------
+
+bspc config border_width         4
+bspc config window_gap           0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config top_padding 40
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+#bspc rule -a scratchpad sticky=on state=floating hidden=on
+# check scratchpad already running
+#[ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && st -c scratchpad -e ~/bin/scratch &
+
+# feh --bg-fill /home/wren/mnt/Data/personal/wallpapers/2023Q1/owl.jpg
+feh --bg-max /home/wren/Documents/Wallpapers/104510108_p0.jpg
+#~/.config/polybar/launch.sh &
+systemctl --user restart polybar
